@@ -25,3 +25,9 @@ optional arguments:
                         nc_busybox, nodejs, openssl, perl, perl_windows, php, powershell, python, python_no_space, python_ipv6,
                         python_ipv6_no_space, python_code, ruby, ruby_windows, socat, telnet. Default: bash_tcp
 ```
+### Example
+```
+python3 reverse_shell_generator.py -ip 127.0.0.1 -p 4000 -t bash_tcp
+```
+### Result
+![](https://i.imgur.com/jg5LBLE.png)

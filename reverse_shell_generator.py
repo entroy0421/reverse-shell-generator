@@ -240,6 +240,7 @@ def getReverseShellPayload(reverse_shell_type, ip, port):
     print(Color.RED + "Don't forget to check with others shell : sh, ash, bsh, csh, ksh, zsh, pdksh, tcsh, bash")
 
 def main():
+    print()
     print(banner())
     args = getParameter()
     print()
