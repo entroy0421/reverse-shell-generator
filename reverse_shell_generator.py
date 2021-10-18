@@ -1,5 +1,3 @@
-SHELL = ['sh', 'ash', 'bsh', 'csh', 'ksh', 'zsh', 'pdksh', 'tcsh', 'bash']
-
 GET_IP_ADDRESS = ["curl ifconfig.me 2>/dev/null"]
 LISTENER = ["nc -lnvp PORT"]
 
