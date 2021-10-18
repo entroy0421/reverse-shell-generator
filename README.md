@@ -15,7 +15,7 @@
 ██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██║   ██║██╔══██╗                        
 ╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ╚██████╔╝██║  ██║                        
  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝    by entroy
-usage: script.py [-h] [-ip IP] [-p PORT] [-t TYPE]
+usage: reverse_shell_generator.py [-h] [-ip IP] [-p PORT] [-t TYPE]
 
 optional arguments:
   -h, --help            show this help message and exit
