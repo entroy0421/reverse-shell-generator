@@ -227,7 +227,7 @@ def getReverseShellPayload(reverse_shell_type, ip, port):
         for i in TELNET_ATTACKER:
             print(i)
     else:
-        print('Invalid type')
+        print(Color.RED + 'Invalid type')
         exit()
     
     print('=======================================================================================================')
