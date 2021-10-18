@@ -1,6 +1,7 @@
 # reverse-shell-generator
 
 ## Usage
+```
 ██████╗ ███████╗██╗   ██╗███████╗██████╗ ███████╗███████╗    ███████╗██╗  ██╗███████╗██╗     ██╗     
 ██╔══██╗██╔════╝██║   ██║██╔════╝██╔══██╗██╔════╝██╔════╝    ██╔════╝██║  ██║██╔════╝██║     ██║     
 ██████╔╝█████╗  ██║   ██║█████╗  ██████╔╝███████╗█████╗      ███████╗███████║█████╗  ██║     ██║     
@@ -23,3 +24,4 @@ optional arguments:
   -t TYPE, --type TYPE  Type: awk, bash_tcp, bash_udp, c, dart, golang, groovy, java, lua_linux, lua_windows, ncat, nc, nc_openbsd,
                         nc_busybox, nodejs, openssl, perl, perl_windows, php, powershell, python, python_no_space, python_ipv6,
                         python_ipv6_no_space, python_code, ruby, ruby_windows, socat, telnet. Default: bash_tcp
+```
