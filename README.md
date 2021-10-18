@@ -31,3 +31,6 @@ python3 reverse_shell_generator.py -ip 127.0.0.1 -p 4000 -t bash_tcp
 ```
 ### Result
 ![](https://i.imgur.com/jg5LBLE.png)
+
+## Reference
+> https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
