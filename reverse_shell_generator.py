@@ -55,7 +55,7 @@ def getReverseShellPayload(reverse_shell_type, ip, port, bypass_type=None, bypas
         reverse_shell = BASH_UDP_REVERSE_SHELL
     elif reverse_shell_type == 'c':
         reverse_shell = C_REVERSE_SHELL
-        print('Compile with', C_COMPILE[0])
+        print('Compile with', Color.GREEN + C_COMPILE[0] + Color.END)
     elif reverse_shell_type == 'dart':
         reverse_shell = DART_REVERSE_SHELL
     elif reverse_shell_type == 'golang':
@@ -82,7 +82,7 @@ def getReverseShellPayload(reverse_shell_type, ip, port, bypass_type=None, bypas
         reverse_shell = OPENSSL_VICTIM
         print('ATTACKER: ')
         for i in OPENSSL_ATTACKER:
-            print(i.replace('IP_ADDRESS', ip).replace('PORT', port))
+            print(Color.GREEN + i.replace('IP_ADDRESS', ip).replace('PORT', port) + Color.END)
     elif reverse_shell_type == 'perl':
         reverse_shell = PERL_REVERSE_SHELL
     elif reverse_shell_type == 'perl_windows':
@@ -111,12 +111,12 @@ def getReverseShellPayload(reverse_shell_type, ip, port, bypass_type=None, bypas
         reverse_shell = SOCAT_REVERSE_SHELL
         print('LISTENER: ')
         for i in SOCAT_LISTENER:
-            print(i)
+            print(Color.GREEN + i + Color.END)
     elif reverse_shell_type == 'telnet':
         reverse_shell = TELNET_VICTIM
         print('LISTENER: ')
         for i in TELNET_ATTACKER:
-            print(i)
+            print(Color.GREEN + i + Color.END)
     else:
         print(Color.RED + 'Invalid type')
         exit()
